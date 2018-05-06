@@ -1,2 +1,2 @@
-# PAT-Advanced-Level-Practice
-# https://www.patest.cn/contests/pat-a-practise
+# PAT-Programming Ability Test
+# https://www.patest.cn/
