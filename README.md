@@ -1,2 +1,2 @@
 # PAT-Programming Ability Test
-https://www.patest.cn/contests
+# https://www.patest.cn/contests
