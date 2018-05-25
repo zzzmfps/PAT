@@ -13,6 +13,8 @@ static const char maps[] = {'1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2
 
 int main(void)
 {
+    // PAT's test cases are not strict enough
+    // code could be accepted even doesn't check the first 17 chars as digits
     int n;
     (cin >> n).get();
     bool allPass = true;
