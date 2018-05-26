@@ -43,8 +43,8 @@ int main(void)
         }
         if (diff == 9) {
             cout << " Yi";
-        } else if (diff == 5) {
-            cout << " Wan";
+        } else if (diff == 5) {  // wrong the case 8,0000,0008 (print extra 'Wan')
+            cout << " Wan";      // more check needed
         }
     }
     cin.get();
