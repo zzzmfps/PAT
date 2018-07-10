@@ -20,8 +20,7 @@ class Solution
     Solution()
     {
         cin >> cmax >> dist >> davg >> num;
-        double p;
-        int d;
+        double p, d;
         for (int i = 0; i < num; ++i) {
             cin >> p >> d;
             sta[d] = p;
