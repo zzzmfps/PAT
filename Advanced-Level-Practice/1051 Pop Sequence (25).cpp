@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <iostream>
 #include <set>
 using namespace std;
@@ -9,7 +8,7 @@ static int x = []() {
     return 0;
 }();
 
-class Solution
+class Solution  // check sequence directly. approach 2: simply simulating the progress.
 {
   private:
     int capacity, length, seqs;
