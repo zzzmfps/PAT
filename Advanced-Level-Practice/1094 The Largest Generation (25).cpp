@@ -27,7 +27,7 @@ class Solution
         }
     }
 
-    void getHighestPrice()
+    void getLargestGeneration()
     {
         int count, layer = 0;
         int maxCount = 0, maxLayer;
@@ -52,6 +52,6 @@ class Solution
 int main(void)
 {
     Solution s;
-    s.getHighestPrice();
+    s.getLargestGeneration();
     return 0;
 }
