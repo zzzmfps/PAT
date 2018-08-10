@@ -10,8 +10,8 @@ static int x = []() {
     return 0;
 }();
 
-class Solution    // always failed at Test point 2, 3 (18/25 scores, 4/6 test points).
-{                 // Something wrong with the question that no code has been accepted yet.
+class Solution
+{
   private:
     struct Person {
         string name;
