@@ -9,7 +9,7 @@ static int x = []() {
     return 0;
 }();
 
-class Solution
+class Solution  // dijkstra only
 {
   private:
     const int LIMIT = 0x3FFFFFFF;
