@@ -1,12 +1,6 @@
-#include <iostream>
-using namespace std;
-
-static int x = []() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    return 0;
-}();
-
+/* Longest Increasing Subsequence (LIS)
+** Takes less space but more time.
+*/
 class Solution
 {
   private:
@@ -31,7 +25,7 @@ class Solution
         fill(dp, dp + l, 1);
     }
 
-    ~Solution() { delete[] stripe, dp; }
+    ~Solution() { delete[] favorite, stripe, dp; }
 
     int getMaxLength()
     {
@@ -48,9 +42,48 @@ class Solution
     }
 };
 
-int main(void)
+
+
+
+/* Longest Common Subsequence (LCS)
+** Takes less time but more space.
+*/
+class Solution
 {
-    Solution s;
-    cout << s.getMaxLength();
-    return 0;
-}
+  private:
+    int n, m, l;
+    int *favorite, *stripe, **dp;
+
+  public:
+    Solution()
+    {
+        cin >> n >> m;
+        favorite = new int[m + 1];
+        for (int i = 1; i <= m; ++i) cin >> favorite[i];
+
+        cin >> l;
+        stripe = new int[l + 1];
+        for (int i = 1; i <= l; ++i) cin >> stripe[i];
+
+        dp = new int *[m + 1];
+        dp[0] = new int[l + 1]{};
+        for (int i = 1; i <= m; ++i) {
+            dp[i] = new int[l + 1];
+            dp[i][0] = 0;
+        }
+    }
+
+    ~Solution()
+    {
+        for (int i = 0; i <= m; ++i) delete[] dp[i];
+        delete[] favorite, stripe, dp;
+    }
+
+    int getMaxLength()
+    {
+        for (int i = 1; i <= m; ++i)
+            for (int j = 1; j <= l; ++j)
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]) + (favorite[i] == stripe[j] ? 1 : 0);
+        return dp[m][l];
+    }
+};
