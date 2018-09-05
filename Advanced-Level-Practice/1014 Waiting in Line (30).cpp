@@ -17,7 +17,7 @@ class Solution
   private:
     const int BEG = 480, END = 1020, MAXT = 540;  // beg time: 8 * 60, end time: 17 * 60
     int n, m, k, q;                               // windows, line length, customers, queries
-    int *times, *queries, *costs;
+    int *times, *queries, costs[1001]{};          // costs index always out of bounds as a dynamic array
 
   public:
     Solution()
@@ -27,7 +27,6 @@ class Solution
         for (int i = 1; i <= k; ++i) cin >> times[i];
         queries = new int[q];
         for (int i = 0; i < q; ++i) cin >> queries[i];
-        costs = new int[k + 1]{};
         process();
     }
 
