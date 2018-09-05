@@ -47,7 +47,7 @@ class Solution
 
         isVipTable = new bool[tables + 1]{};
         vipIdx = new int[vipTables];
-        for (int i = 0, j; i < vipTables; ++i) {
+        for (int i = 0; i < vipTables; ++i) {
             cin >> vipIdx[i];
             isVipTable[vipIdx[i]] = true;
         }
@@ -96,7 +96,8 @@ class Solution
         }
         for (int i = 1; i <= tables; ++i) cout << (i > 1 ? " " : "") << counts[i];
 
-        delete[] serves, counts;
+        delete[] serves;
+        delete[] counts;
     }
 
   private:
