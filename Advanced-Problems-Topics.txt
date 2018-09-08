@@ -19,7 +19,7 @@ source: https://blog.csdn.net/liuchuo/article/details/52497386
 1017	Queueing at Bank (25)		              模拟
 1018	Public Bike Management (30)		        Dijkstra算法 + DFS
 1019	General Palindromic Number (20)		    回文数
-1020	Tree Traversals (25)		              进制转换
+1020	Tree Traversals (25)		              先序中序求层序
 1021	Deepest Root (25)		                  图的遍历，DFS，计算连通分量的个数
 1022	Digital Library (30)		              map映射，STL的使用
 1023	Have Fun with Numbers (20)		        大整数运算
@@ -85,7 +85,7 @@ source: https://blog.csdn.net/liuchuo/article/details/52497386
 1083	List Grades (25)		                  排序
 1084	Broken Keyboard (20)		              Hash散列
 1085	Perfect Sequence (25)		              二分，two pointers
-1086	Tree Traversals Again (25)		        树的遍历
+1086	Tree Traversals Again (25)		        先序中序求后序
 1087	All Roads Lead to Rome (30)		        Dijkstra算法 + DFS，最短路径
 1088	Rational Arithmetic (20)		          分数的四则运算
 1089	Insert or Merge (25)		              two pointers
@@ -101,7 +101,7 @@ source: https://blog.csdn.net/liuchuo/article/details/52497386
 1099	Build A Binary Search Tree (30)		    二叉查找树BST
 1100	Mars Numbers (20)		                  map映射，STL的使用
 1101	Quick Sort (25)		                    快速排序
-1102	Invert a Binary Tree (25)		          树的遍历
+1102	Invert a Binary Tree (25)		          二叉树反转，求层序中序
 1103	Integer Factorization (30)		        深度优先搜索DFS
 1104	Sum of Number Segments (20)		        数学问题
 1105	Spiral Matrix (25)		                模拟
