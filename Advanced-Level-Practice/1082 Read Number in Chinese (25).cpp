@@ -8,8 +8,8 @@ static int x = []() {
     return 0;
 }();
 
-static const string decimal[] = {"ling", "yi", "er", "san", "si", "wu", "liu", "qi", "ba", "jiu"};
-static const string chinese[] = {" Qian", "", " Shi", " Bai"};
+static const string decimal[] = { "ling", "yi", "er", "san", "si", "wu", "liu", "qi", "ba", "jiu" };
+static const string chinese[] = { " Qian", "", " Shi", " Bai" };
 
 int main(void)
 {
@@ -25,6 +25,7 @@ int main(void)
     }
     getline(cin, num);
     bool inZeroes = false;
+    bool is_wan_exist = false;	// fix 8,0000,0008
     for (int i = 0, length = num.size(); i < length; ++i) {
         int diff = length - i;
         if (num[i] == '0') {
@@ -39,12 +40,13 @@ int main(void)
             } else {
                 cout << ' ';
             }
+            if (num[i] != '0' && diff > 4 && diff < 9) is_wan_exist = true;
             cout << decimal[num[i] - '0'] << chinese[diff % 4];
         }
         if (diff == 9) {
             cout << " Yi";
-        } else if (diff == 5) {  // wrong the case 8,0000,0008 (print extra 'Wan')
-            cout << " Wan";      // more check needed
+        } else if (diff == 5 && is_wan_exist) {
+            cout << " Wan";
         }
     }
     cin.get();
