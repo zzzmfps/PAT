@@ -1,16 +1,10 @@
 #include <iostream>
 using namespace std;
 
-static int x = []() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    return 0;
-}();
-
 class Solution
 {
   private:
-    int k, *nums, *dp;
+    int k, *nums;
     bool isAllNegative = true;
 
   public:
@@ -22,11 +16,9 @@ class Solution
             cin >> nums[i];
             if (nums[i] >= 0) isAllNegative = false;
         }
-        dp = new int[k];
-        dp[0] = nums[0];
     }
 
-    ~Solution() { delete[] nums, dp; }
+    ~Solution() { delete[] nums; }
 
     void getMaxSubseqSum()
     {
@@ -34,15 +26,19 @@ class Solution
             cout << 0 << ' ' << nums[0] << ' ' << nums[k - 1];
             return;
         }
-        int res = nums[0], beg = nums[0], end = nums[0], last;
+
+        int tmp = nums[0], res = nums[0];
+        int beg = nums[0], end = nums[0], last = nums[0];
+
         for (int i = 1; i < k; ++i) {
-            if (dp[i - 1] > 0) {
-                dp[i] = dp[i - 1] + nums[i];
+            if (tmp > 0) {
+                tmp += nums[i];
             } else {
-                last = dp[i] = nums[i];
+                tmp = last = nums[i];
             }
-            if (dp[i] > res) res = dp[i], beg = last, end = nums[i];
+            if (tmp > res) res = tmp, beg = last, end = nums[i];
         }
+        
         cout << res << ' ' << beg << ' ' << end;
     }
 };
