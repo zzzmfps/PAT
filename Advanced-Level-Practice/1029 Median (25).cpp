@@ -8,7 +8,7 @@ static int x = []() {
     return 0;
 }();
 
-class Solution  // AC but only gives me 16/25 scores, why???
+class Solution
 {
   private:
     int n1, n2;
@@ -22,7 +22,7 @@ class Solution  // AC but only gives me 16/25 scores, why???
         for (int i = 0; i < n1; ++i) cin >> seq[i];
 
         cin >> n2;
-        seq.resize((n1 + n2 + 1) / 2);  // memory limit: 1.5MB
+        seq.resize((n1 + n2 + 1) / 2);
         for (int i = seq.size() - 1; i >= n1; --i) cin >> seq[i];
 
         int mark = n1 - 1, tmp;
