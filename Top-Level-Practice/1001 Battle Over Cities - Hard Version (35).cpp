@@ -3,6 +3,15 @@
 #include <vector>
 using namespace std;
 
+/*
+// could reduce runtime from 650ms to 287ms
+static int x = []() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    return 0;
+}();
+*/
+
 class Solution
 {
 private:
