@@ -39,17 +39,18 @@ public:
     bool battleOverCitiesHardVersion()
     {
         if (cities == 1) return 1;
-        int maxCost = 1;    // skip the case where there needs no repair
+        int maxCost = 0;
         vector<int> ans;
         for (int i = 1; i <= cities; ++i) {
             int *uset = new int[cities + 1];    // union set
             for (int i = 1; i <= cities; ++i) uset[i] = i;
             int clusters = cities - 1;  // divided into how many parts
             for (const auto &e : graph) {   // recheck connections after losing a city
-                int a = e.start, b = e.dest;
-                if (a == i || b == i) continue;
-                join(uset, a, b);
-                clusters -= 1;
+                if (e.start == i || e.dest == i) continue;
+                if (findRoot(uset, e.start) != findRoot(uset, e.dest)) {
+                    clusters -= 1;	// two clusters are combined
+                    join(uset, e.start, e.dest);
+                }
             }
             if (clusters == 1) continue;
             int curCost = 0;
