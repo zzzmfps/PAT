@@ -2,7 +2,8 @@
 using namespace std;
 
 int main(void)
-{ // test case may be NOT perfect: what is the answer for num=514,515,516? (obviously TLE)
+{ // testcases may be NOT perfect or there's something wrong with the problem
+  // e.g. what is the answer for num=34,35,36,514,515,516? (obviously TLE)
     int num;
     cin >> num;
     int bits = 1, remains = 1;
@@ -14,8 +15,8 @@ int main(void)
         remains = remains * 10 + 1;
     }
     // find least s(consists of '1' only)
-    string div(bits, '1'), quo = "";
-    for (auto c : div) {
+    string quo = "";
+    for (int i = 0; i < bits; ++i) {
         remains = remains * 10 + 1;
         if (quo.empty() && remains < num) continue;
         int tmp = remains / num;
