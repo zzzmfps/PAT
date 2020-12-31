@@ -23,15 +23,9 @@ int main(int argc, char const *argv[])
         char op = ops.top();
         nums.pop(), ops.pop();
         switch (op) {
-            case '+':
-                nums.top() += y;
-                break;
-            case '-':
-                nums.top() -= y;
-                break;
-            case '*':
-                nums.top() *= y;
-                break;
+            case '+': nums.top() += y; break;
+            case '-': nums.top() -= y; break;
+            case '*': nums.top() *= y; break;
             case '/':
                 if (0 == y) {
                     cout << "ERROR: " << nums.top() << "/0";
