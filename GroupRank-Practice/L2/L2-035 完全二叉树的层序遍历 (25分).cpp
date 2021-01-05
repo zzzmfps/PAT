@@ -17,15 +17,15 @@ public:
     }
 
     void printByLevelOrder() {
-        for (int i = 1; i < level.size(); ++i) cout << (1 == i ? "" : " ") << level[i];
+        copy(this->level.begin() + 1, this->level.end(), ostream_iterator<int>(cout, " "));
     }
 
 private:
     void dfs(int index) {
-        if (1 + index > post.size()) return;
+        if (1 + index > this->post.size()) return;
         dfs(index << 1);
         dfs(index << 1 | 1);
-        level[index] = post[++count];
+        this->level[index] = this->post[++count];
     }
 };
 
