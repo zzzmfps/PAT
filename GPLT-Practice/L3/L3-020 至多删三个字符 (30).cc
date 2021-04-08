@@ -34,8 +34,7 @@ public:
 private:
     static ULL done(std::vector<ULL *> &v) {
         size_t resIndex = v.size() - 2;
-        ULL res = 0; // std::accumulate DOESN'T supports unsigned long long
-        for (size_t i = 0; i < 4; ++i) res += v[resIndex][i];
+        ULL res = std::accumulate(v[resIndex], v[resIndex] + 4, 0ULL); // NOT 0
         for (auto &&ptr : v) delete[] ptr;
         return res;
     }
